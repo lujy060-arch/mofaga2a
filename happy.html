@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Birthday Surprise 🎂</title>
+
+ 
+  <link rel="stylesheet" href="happy.css">
+</head>
+
+<body>
+
+  <main class="phone">
+
+    <section class="screen active" id="lock">
+      <div class="topline">A LITTLE SURPRISE FOR YOU</div>
+
+      <div class="decoration">🦋 ✨</div>
+
+      <h1>ENTER A PASSCODE</h1>
+      <p>اكتب الرقم السري عشان تشوف المفاجأة 💗</p>
+
+      <div class="slots">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button class="key">1</button>
+        <button class="key">2</button>
+        <button class="key">3</button>
+        <button class="key">4</button>
+        <button class="key">5</button>
+        <button class="key">6</button>
+        <button class="key">7</button>
+        <button class="key">8</button>
+        <button class="key">9</button>
+        <button class="key clear" data-action="clear">مسح</button>
+        <button class="key">0</button>
+        <button class="key clear" data-action="back">⌫</button>
+      </div>
+
+      <div class="error" id="error"></div>
+    </section>
+
+    <section class="screen" id="intro">
+      <div class="mascot">🐹</div>
+
+      <h1>I MADE SOMETHING<br>FOR YOU!</h1>
+
+      <p>في مفاجأة صغيرة مستنياك… جاهز؟ 🎀</p>
+
+      <button class="pill" data-next="birthday">
+        LET'S GO
+      </button>
+    </section>
+
+    <section class="screen" id="birthday">
+      <div class="sticker">🎉 🎂 🎈</div>
+
+      <div class="topline">TODAY IS YOUR DAY</div>
+
+      <h1>
+        HAPPY BIRTHDAY<br>
+        <span id="personName">MY DEAR FRIEND</span>!
+      </h1>
+
+      <p>
+        أتمنى تكون سنة جميلة مليانة ضحك ونجاح وذكريات حلوة،
+        وتحقق فيها كل اللي بتتمناه 💖
+      </p>
+
+      <button class="pill" data-next="letter">
+        NEXT
+      </button>
+    </section>
+
+    <section class="screen" id="letter">
+      <div class="sticker">💌</div>
+
+      <h1>JUST FOR YOU</h1>
+
+      <div class="note">
+        <h2>كل سنة وأنت طيب! 🌷</h2>
+        <p id="message">
+          أتمنى أيامك تكون دايمًا مليانة حاجات تفرحك.
+          يوم ميلاد سعيد! 💗
+        </p>
+      </div>
+
+      <button class="pill" data-next="memories">
+        SEE PHOTOS
+      </button>
+    </section>
+
+    <section class="screen" id="memories">
+      <div class="sticker">📸 ✨</div>
+
+      <h1>OUR MEMORIES 💗</h1>
+
+      <p>شوية صور وذكريات حلوة</p>
+
+      <div class="photos">
+        <div class="photo">ضيف صورتك الأولى</div>
+        <div class="photo">ضيف صورتك الثانية</div>
+        <div class="photo">ضيف صورتك الثالثة</div>
+      </div>
+
+      <button class="pill" onclick="restart()">
+        RESTART ↻
+      </button>
+    </section>
+
+  </main>
+  <script src="happy.js"></script>
+
+</body>
+</html>
+

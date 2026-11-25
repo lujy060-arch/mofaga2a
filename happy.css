@@ -1,0 +1,321 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #210810;
+  font-family: Tahoma, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* إطار الموقع */
+
+.phone {
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, #ff8297 2px, transparent 4px),
+    radial-gradient(circle at 85% 25%, #ff9bad 3px, transparent 5px),
+    radial-gradient(circle at 20% 80%, #ff8297 2px, transparent 4px),
+    linear-gradient(145deg, #f34d69, #c51e48, #ed5267);
+}
+
+/* خلفية كل صفحة */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 13px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+}
+
+/* الصفحة الحالية فقط */
+
+.screen.active {
+  display: flex;
+  animation: appear .5s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* المربع الغامق في المنتصف */
+
+.screen::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 76%;
+  min-height: 420px;
+  max-height: 720px;
+  background: linear-gradient(145deg, #a91c3d, #83152f);
+  border: 1px solid #ffb5c355;
+  border-radius: 28px;
+  box-shadow: 0 15px 45px #650b273d;
+  z-index: 0;
+}
+
+/* مساحة أكبر لصفحة الصور */
+
+#memories::before {
+  height: 92%;
+  max-height: 850px;
+}
+
+/* خلي الكلام فوق المربع */
+
+.screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* العناوين */
+
+h1 {
+  color: #fff8f5;
+  font-size: clamp(24px, 7vw, 32px);
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 21px;
+  color: #a51e40;
+}
+
+p {
+  color: #ffe4e9;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 300px;
+}
+
+.topline {
+  color: #ffd5de;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* الزخارف */
+
+.decoration,
+.sticker {
+  font-size: 38px;
+  margin: 8px;
+}
+
+.mascot {
+  font-size: 85px;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* الباسورد */
+
+.slots {
+  display: flex;
+  gap: 12px;
+  direction: ltr;
+  margin: 12px;
+}
+
+.slot {
+  width: 42px;
+  height: 47px;
+  border: 1px solid #ffc4d0;
+  border-radius: 10px;
+  background: #ffffff15;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 23px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 55px);
+  gap: 11px;
+  direction: ltr;
+}
+
+.key {
+  width: 55px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #fff0f3;
+  color: #a51e40;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #6f102c;
+}
+
+.key:active {
+  transform: translateY(3px);
+}
+
+.key.clear {
+  font-size: 12px;
+}
+
+/* الأزرار */
+
+.pill {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 30px;
+  background: #fff0f3;
+  color: #a51e40;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #6e102c;
+  margin-top: 12px;
+  transition: .2s;
+}
+
+.pill:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #6e102c;
+}
+
+/* كارت الرسالة */
+
+.note {
+  width: 100%;
+  max-width: 310px;
+  padding: 25px 18px;
+  border-radius: 18px;
+  background: #fff0f3;
+  color: #a51e40;
+  box-shadow: 0 8px 25px #500d263d;
+  transform: rotate(-1deg);
+}
+
+.note p {
+  color: #772039;
+  margin: 12px auto 0;
+}
+
+/* الصور */
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.photo {
+  aspect-ratio: 1;
+  background: #fff0f3;
+  border: 6px solid #fff0f3;
+  border-radius: 7px;
+  color: #a51e40;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #500d263d;
+}
+
+.photo:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 70%;
+  justify-self: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* رسالة الخطأ */
+
+.error {
+  color: #ffe5a8;
+  font-size: 12px;
+  min-height: 18px;
+}
+
+/* الموبايلات الصغيرة */
+
+@media (max-width: 360px) {
+  .screen {
+    padding: 15px;
+    gap: 9px;
+  }
+
+  .screen::before {
+    width: 94%;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+}
+
+@media (max-height: 700px) {
+  .screen {
+    gap: 7px;
+    padding: 12px;
+  }
+
+  .mascot {
+    font-size: 60px;
+  }
+
+  .sticker {
+    font-size: 30px;
+  }
+
+  .key {
+    height: 40px;
+  }
+}
+
